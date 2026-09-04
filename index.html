@@ -13,12 +13,12 @@
         }
 
         body {
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, #020205, #0a0a12);
+            background: #050508;
             font-family: Arial, sans-serif;
             overflow: hidden;
             position: relative;
@@ -27,14 +27,14 @@
         /* --- พระจันทร์เสี้ยว มุมซ้ายบน --- */
         .moon {
             position: absolute;
-            top: 40px;
-            left: 50px;
-            width: 80px;
-            height: 80px;
+            top: 50px;
+            left: 60px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            box-shadow: -15px 12px 0 0 #fffae6;
-            filter: drop-shadow(0 0 15px rgba(255, 235, 170, 0.9));
-            transform: rotate(-10deg);
+            box-shadow: -18px 10px 0 0 #fffae6;
+            filter: drop-shadow(0 0 20px rgba(255, 235, 170, 0.8));
+            transform: rotate(-15deg);
             z-index: 2;
         }
 
@@ -46,20 +46,21 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            overflow: hidden;
             z-index: 1;
         }
 
         .star {
             position: absolute;
-            top: -100px;
-            width: 3px;
-            height: 3px;
-            background: #ffffff;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #fff;
             border-radius: 50%;
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1),
-                        0 0 10px #ffffff;
-            animation: animate 4s linear infinite;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 
+                        0 0 0 8px rgba(255, 255, 255, 0.1), 
+                        0 0 20px rgba(255, 255, 255, 1);
+            animation: animate 3s linear infinite;
         }
 
         .star::before {
@@ -67,7 +68,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 180px;
+            width: 300px;
             height: 1px;
             background: linear-gradient(90deg, #fff, transparent);
         }
@@ -86,12 +87,12 @@
             }
         }
 
-        /* กระจายตำแหน่งดาวตก */
-        .star:nth-child(1) { top: 10%; right: 10%; animation-delay: 0s; animation-duration: 2.5s; }
-        .star:nth-child(2) { top: 20%; right: 30%; animation-delay: 1.2s; animation-duration: 3s; }
-        .star:nth-child(3) { top: 5%; right: 50%; animation-delay: 2.4s; animation-duration: 2s; }
-        .star:nth-child(4) { top: 15%; right: 75%; animation-delay: 0.8s; animation-duration: 2.8s; }
-        .star:nth-child(5) { top: 0%; right: 90%; animation-delay: 1.8s; animation-duration: 2.2s; }
+        /* กำหนดตำแหน่ง และเวลาเกิดของดาวตกแต่ละดวง */
+        .star:nth-child(1) { top: 0px; right: 0px; animation-delay: 0s; animation-duration: 2.5s; }
+        .star:nth-child(2) { top: 0px; right: 300px; animation-delay: 1.2s; animation-duration: 3s; }
+        .star:nth-child(3) { top: 80px; right: 100px; animation-delay: 2.4s; animation-duration: 2s; }
+        .star:nth-child(4) { top: 0px; right: 700px; animation-delay: 0.8s; animation-duration: 2.8s; }
+        .star:nth-child(5) { top: 200px; right: 400px; animation-delay: 1.8s; animation-duration: 2.2s; }
 
         /* --- ฟอร์มลงชื่อเข้าใช้ --- */
         .center {
@@ -100,17 +101,16 @@
             text-align: center;
             padding: 40px;
             width: 380px;
-            max-width: 90%;
             border-radius: 20px;
-            background: rgba(18, 18, 24, 0.85);
+            background: rgba(18, 18, 20, 0.75);
             border: 1px solid rgba(255, 215, 0, 0.4);
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
         h1 {
             margin-bottom: 10px;
-            font-size: 30px;
+            font-size: 32px;
             color: #ffffff;
             text-shadow: 0 0 12px #ffd700;
         }
@@ -158,7 +158,7 @@
             padding: 14px;
             border: none;
             border-radius: 10px;
-            background: #ffd700;
+            background: #e5b82c;
             color: #000;
             font-size: 18px;
             font-weight: bold;
@@ -169,10 +169,11 @@
         button:hover {
             transform: scale(1.02);
             box-shadow: 0 0 20px #ffd700;
-            background: #ffe44d;
+            background: #ffd700;
         }
     </style>
 </head>
+
 <body>
 
     <div class="moon"></div>
