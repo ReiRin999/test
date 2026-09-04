@@ -1,104 +1,127 @@
 <!DOCTYPE html>
-
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>เว็บไซต์ของกาย</title>
+    <title>เว็บไซต์ของกาย - ลงชื่อเข้าใช้</title>
 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+                135deg,
+                #8a5a00,
+                #d4af37,
+                #ffd700,
+                #b8860b
+            );
+            font-family: Arial, sans-serif;
+        }
 
-    body {
-        margin: 0;
-        width: 100%;
-        height: 100vh;
+        .center {
+            text-align: center;
+            padding: 40px;
+            width: 380px;
+            border-radius: 25px;
+            background: rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        h1 {
+            margin: 0 0 10px;
+            font-size: 36px;
+            color: white;
+            text-shadow: 0 0 15px #ffd700;
+        }
 
-        background: linear-gradient(
-            135deg,
-            #8a5a00,
-            #d4af37,
-            #ffd700,
-            #b8860b
-        );
+        p {
+            font-size: 16px;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+        }
 
-        font-family: Arial, sans-serif;
-    }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
 
-    .center {
-        text-align: center;
+        .input-group label {
+            display: block;
+            color: #ffd700;
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-        padding: 50px;
-        border-radius: 25px;
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid #ffd700;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
 
-        background: rgba(0, 0, 0, 0.35);
+        .input-group input:focus {
+            background: #ffffff;
+            box-shadow: 0 0 10px #ffd700;
+        }
 
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-    }
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            background: #ffd700;
+            color: #5c4000;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    h1 {
-        margin: 0 0 15px;
-
-        font-size: 50px;
-        color: white;
-
-        text-shadow: 0 0 15px #ffd700;
-    }
-
-    p {
-        font-size: 20px;
-        color: white;
-    }
-
-    button {
-        margin-top: 20px;
-
-        padding: 15px 35px;
-
-        border: none;
-        border-radius: 30px;
-
-        background: #ffd700;
-        color: #5c4000;
-
-        font-size: 18px;
-        font-weight: bold;
-
-        cursor: pointer;
-
-        transition: 0.3s;
-    }
-
-    button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 25px #ffd700;
-    }
-</style>
-
-
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px #ffd700;
+            background: #ffe44d;
+        }
+    </style>
 </head>
 
 <body>
 
+    <div class="center">
+        <h1>✨ ยินดีต้อนรับ ✨</h1>
+        <p>ลงชื่อเข้าใช้เพื่อเข้าสู่เว็บไซต์ของกาย</p>
 
-<div class="center">
+        <form onsubmit="event.preventDefault(); alert('ลงชื่อเข้าใช้สำเร็จ!');">
+            <div class="input-group">
+                <label for="username">ชื่อผู้ใช้ / อีเมล</label>
+                <input type="text" id="username" placeholder="กรอกชื่อผู้ใช้..." required>
+            </div>
 
-    <h1>✨ ยินดีต้อนรับ ✨</h1>
+            <div class="input-group">
+                <label for="password">รหัสผ่าน</label>
+                <input type="password" id="password" placeholder="กรอกรหัสผ่าน..." required>
+            </div>
 
-    <p>เข้าสู่เว็บไซต์ของกาย</p>
-
-    <button onclick="alert('สวัสดีคับ! 👋')">
-        กดที่นี่
-    </button>
-
-</div>
-
+            <button type="submit">
+                เข้าสู่ระบบ
+            </button>
+        </form>
+    </div>
 
 </body>
 </html>
